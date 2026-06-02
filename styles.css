@@ -298,7 +298,7 @@ pre {
 
 .project-card {
   display: grid;
-  grid-template-columns: minmax(220px, 0.78fr) minmax(0, 1fr);
+  grid-template-rows: auto 1fr;
   overflow: hidden;
   border: 1px solid var(--line);
   border-radius: 8px;
@@ -312,9 +312,10 @@ pre {
 
 .browser-preview {
   position: relative;
-  min-height: 330px;
-  padding: 48px 20px 20px;
-  border-right: 1px solid var(--line);
+  height: 390px;
+  overflow: hidden;
+  padding: 42px 14px 14px;
+  border-bottom: 1px solid var(--line);
   background: var(--soft);
 }
 
@@ -332,85 +333,16 @@ pre {
     rgba(16, 20, 24, 0.1);
 }
 
-.preview-hero,
-.preview-lines span,
-.preview-stack span,
-.preview-grid span,
-.chat-window span {
-  display: block;
-  border-radius: 8px;
-}
-
-.preview-hero {
-  height: 112px;
-  margin-bottom: 18px;
-  background: linear-gradient(135deg, var(--green), var(--blue));
-}
-
-.restaurant-preview .preview-hero {
-  background: linear-gradient(135deg, #d73722, #f4b63f);
-}
-
-.salon-preview .preview-hero {
-  background: linear-gradient(135deg, #11171c, #c8a568);
-}
-
-.barber-preview .preview-hero {
-  background: linear-gradient(135deg, #11171c, #0b6b52);
-}
-
-.preview-lines,
-.preview-stack,
-.preview-grid,
-.chat-window {
-  display: grid;
-  gap: 12px;
-}
-
-.preview-lines span {
-  height: 24px;
-  background: white;
-}
-
-.preview-lines span:nth-child(2) {
-  width: 82%;
-}
-
-.preview-lines span:nth-child(3) {
-  width: 58%;
-}
-
-.preview-stack {
-  grid-template-columns: 1fr 1fr;
-}
-
-.preview-stack span,
-.preview-grid span {
-  height: 86px;
-  background: white;
-}
-
-.preview-grid {
-  grid-template-columns: repeat(3, 1fr);
-}
-
-.chat-window {
-  align-content: end;
-  min-height: 220px;
-  padding: 18px;
+.browser-preview iframe {
+  width: 900px;
+  height: 720px;
+  border: 0;
   border-radius: 8px;
   background: white;
-}
-
-.chat-window span {
-  min-height: 46px;
-  background: var(--blue-soft);
-}
-
-.chat-window span:nth-child(2) {
-  width: 76%;
-  justify-self: end;
-  background: var(--green);
+  box-shadow: 0 12px 28px rgba(16, 20, 24, 0.12);
+  pointer-events: none;
+  transform: scale(0.45);
+  transform-origin: top left;
 }
 
 .project-content {
@@ -534,7 +466,6 @@ footer a {
   }
 
   .browser-preview {
-    border-right: 0;
     border-bottom: 1px solid var(--line);
   }
 }
@@ -572,12 +503,12 @@ footer a {
   }
 
   .browser-preview {
-    min-height: 280px;
+    height: 300px;
+    padding-inline: 10px;
   }
 
-  .preview-grid,
-  .preview-stack {
-    grid-template-columns: 1fr;
+  .browser-preview iframe {
+    transform: scale(0.34);
   }
 
   .button {
